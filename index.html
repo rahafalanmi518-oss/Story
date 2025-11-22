@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>روابط المنتجات</title>
+<style>
+    body {
+        font-family: sans-serif;
+        background: #ffffff;
+        padding: 20px;
+        text-align: center;
+    }
+    .box {
+        margin-top: 40px;
+    }
+    input {
+        padding: 12px;
+        width: 80%;
+        max-width: 300px;
+        font-size: 18px;
+        border: 2px solid #000;
+        border-radius: 10px;
+    }
+    button {
+        padding: 12px 20px;
+        margin-top: 15px;
+        font-size: 18px;
+        border: none;
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>🔎 ابحث برقم المنتج</h2>
+<p>اكتب رقم المنتج وسيوديك مباشرة للرابط الذي تختاره</p>
+
+<div class="box">
+    <input id="num" type="number" placeholder="اكتب رقم المنتج">
+    <br>
+    <button onclick="go()">بحث</button>
+</div>
+
+<script>
+    const links = {
+        1: "https://example.com/product1",
+        2: "https://example.com/product2",
+        3: "https://example.com/product3"
+    };
+
+    function go() {
+        const n = document.getElementById("num").value;
+        if(links[n]) {
+            window.location.href = links[n];
+        } else {
+            alert("الرقم غير موجود");
+        }
+    }
+</script>
+
+</body>
+</html>
